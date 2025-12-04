@@ -1,0 +1,48 @@
+body {
+    background: #d9c8ff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    color: #222;
+}
+h1 {
+    color: #2d1c5a;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+form{
+    background: #ffffff;
+    width: 100%;
+    max-width: 300px;     
+    padding: 25px;
+    border-radius: 14px;
+    margin: 0 auto;         
+    border: 1px solid #7658d6;
+    display: flex;
+    flex-direction: column;
+
+}
+
+button {
+    padding: 10px;
+    background:#d9c8ff;
+    border: none;
+    border-radius: 8px;
+    color: #7658d6;
+    font-size: 15px;
+    font-weight: bold;
+   
+}
+
+.mensagem-erro {
+    text-align: center;
+    border: 5px solid red;
+    background-color: lightcoral;
+    border-radius: 10px;
+    color: darkred;
+}
+
+
