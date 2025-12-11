@@ -48,9 +48,7 @@ $categorias = $stmt_categorias->fetchAll();
     <title><?php echo $transacao ? 'Editar' : 'Nova'; ?> Transação - Sistema Financeiro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-        /* ===========================================
-   PALETA DE CORES
-=========================================== */
+
         :root {
             --roxo-escuro: #4c3373;
             --roxo-medio: #7c5fc4;
@@ -60,9 +58,6 @@ $categorias = $stmt_categorias->fetchAll();
             --cinza-texto: #4b4453;
         }
 
-        /* ===========================================
-   GLOBAL
-=========================================== */
         body {
             margin: 0;
             padding: 20px;
@@ -70,7 +65,6 @@ $categorias = $stmt_categorias->fetchAll();
             color: var(--cinza-texto);
             background: linear-gradient(160deg, #f7f3ff, #e9e2ff);
             text-align: center;
-            /* centraliza todo o conteúdo por padrão */
         }
 
         a {
@@ -78,12 +72,6 @@ $categorias = $stmt_categorias->fetchAll();
             color: var(--roxo-escuro);
         }
 
-        /* ===========================================
-   NAVBAR PADRONIZADA
-=========================================== */
-        /* ===========================================
-   NAVBAR PADRONIZADA - BOTÕES HORIZONTAIS
-=========================================== */
         .navbar {
             width: 100%;
             padding: 18px 40px;
@@ -93,7 +81,6 @@ $categorias = $stmt_categorias->fetchAll();
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
             display: flex;
             justify-content: space-between;
-            /* links à esquerda, usuário à direita */
             align-items: center;
             margin-bottom: 30px;
             border-radius: 12px;
@@ -108,22 +95,17 @@ $categorias = $stmt_categorias->fetchAll();
             align-items: center;
         }
 
-        /* Título como texto puro */
+    
         .navbar .titulo {
             font-weight: 700;
             font-size: 22px;
             color: var(--roxo-escuro);
             padding: 0;
-            /* sem padding de botão */
             background: none;
-            /* sem fundo */
             border: none;
-            /* sem borda */
             pointer-events: none;
-            /* não clicável */
         }
 
-        /* Links como botões */
         .navbar ul li a {
             display: inline-block;
             padding: 10px 20px;
@@ -141,7 +123,6 @@ $categorias = $stmt_categorias->fetchAll();
             transform: translateY(-2px);
         }
 
-        /* Lado direito da navbar: usuário e logout */
         .navbar-right {
             display: flex;
             align-items: center;
@@ -164,11 +145,6 @@ $categorias = $stmt_categorias->fetchAll();
             background: var(--roxo-escuro);
         }
 
-
-
-        /* ===========================================
-   TÍTULOS
-=========================================== */
         h1,
         h2,
         h3 {
@@ -177,9 +153,6 @@ $categorias = $stmt_categorias->fetchAll();
             margin-bottom: 20px;
         }
 
-        /* ===========================================
-   BOTÃO "NOVA TRANSAÇÃO" CENTRALIZADO
-=========================================== */
         a[href*="transacoes_formulario.php"] {
             display: block;
             margin: 0 auto 25px auto;
@@ -197,9 +170,6 @@ $categorias = $stmt_categorias->fetchAll();
             background: var(--roxo-claro);
         }
 
-        /* ===========================================
-   FORMULÁRIOS
-=========================================== */
         input,
         select,
         textarea,
@@ -237,9 +207,6 @@ $categorias = $stmt_categorias->fetchAll();
             background: var(--roxo-escuro);
         }
 
-        /* ===========================================
-   TABELAS
-=========================================== */
         table {
             width: 100%;
             max-width: 900px;
@@ -276,7 +243,6 @@ $categorias = $stmt_categorias->fetchAll();
             color: var(--roxo-escuro);
         }
 
-        /* BOTÕES DE AÇÃO */
         table td a {
             display: inline-block;
             width: 110px;
@@ -308,9 +274,6 @@ $categorias = $stmt_categorias->fetchAll();
             background: #ffd4e3;
         }
 
-        /* ===========================================
-   MENSAGENS DO SISTEMA
-=========================================== */
         .mensagem {
             background: var(--lilas);
             border-left: 6px solid var(--roxo-medio);
