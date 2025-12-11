@@ -1,53 +1,176 @@
 body {
-    background: #d9c8ff;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f3e8ff;
+    color: #4b3b5c;
+    margin: 0;
     padding: 20px;
-    color: #222;
-}
-h1 h2 {
-    color: #2d1c5a;
-    font-size: 30px;
-    font-weight: bold;
 }
 
-form{
-    background: #ffffff;
-    width: 100%;
-    max-width: 300px;     
-    padding: 25px;
-    border-radius: 14px;
-    margin: 0 auto;         
-    border: 1px solid #7658d6;
+.body-formularios {
     display: flex;
     flex-direction: column;
-
-}
-
-button {
-    padding: 10px;
-    background:#d9c8ff;
-    border: none;
-    border-radius: 8px;
-    color: #7658d6;
-    font-size: 15px;
-    font-weight: bold;
-   
-}
-
-.mensagem-erro {
+    align-items: center;
     text-align: center;
-    border: 5px solid red;
-    background-color: lightcoral;
-    border-radius: 10px;
-    color: darkred;
+    justify-content: center;
 }
 
+h1,
+h2,
+h3 {
+    color: #6d4ea6;
+}
+
+/* LINKS (SEM SUBLINHADO E LETRAS PRETAS) */
 a {
-    color: #7f3cc8;
-    text-decoration: none;
+    color: #000000 !important;
+    text-decoration: none !important;
     font-weight: bold;
+}
+
+a:hover {
+    color: #000000 !important;
+}
+
+/* REMOVER QUALQUER SUBLINHADO NOS ESTADOS */
+a:hover,
+a:visited,
+a:active,
+a:focus {
+    text-decoration: none !important;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    padding: 8px 14px;
+    background-color: #e6d4ff;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: #000000 !important;
+}
+
+nav ul li a:hover {
+    background-color: #c6a8ff;
+}
+
+/* CAIXAS INTERNAS */
+div>div {
+    background-color: #e8d9ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(130, 100, 190, 0.2);
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f8f1ff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(130, 100, 190, 0.15);
+}
+
+table thead {
+    background-color: #d8c1ff;
+    color: #3d2a52;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #d1b9ff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2e7ff;
+}
+
+table tr:hover {
+    background-color: #e4d2ff;
+}
+
+p a {
+    background-color: #d1b6ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #000 !important;
+}
+
+p a:hover {
+    background-color: #b391ff;
+}
+
+/* BOTÃO SAIR */
+.btn-sair {
+    background-color: #b87ccd;
+    color: #ffffff !important;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none !important;
+    transition: 0.2s;
+}
+
+.btn-sair:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+/* NAVBAR PADRÃO */
+.navbar {
+    width: 100%;
+    padding: 18px 0;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(150, 120, 200, 0.25);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+}
+
+/* NAVBAR GLOBAL */
+.navbar {
+    width: 100%;
+    padding: 18px 0;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(150, 120, 200, 0.25);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar ul li a {
+    text-decoration: none !important;
+    color: #5c3d79 !important;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid #d2c0ed;
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+.navbar ul li a:hover {
+    background: #e9dafe;
+    transform: translateY(-2px);
 }
 

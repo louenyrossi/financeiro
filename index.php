@@ -48,25 +48,21 @@ $ultimas_transacoes = $stmt_ultimas->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Financeiro</title>
-</head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 <body>
+    <?php include 'navbar.php'; ?>
     <h1>Sistema Financeiro</h1>
 
     <div>
         <p>Bem-vindo, <strong> <?php echo $usuario_nome ?> </strong></p>
-        <a href="logout.php">Sair</a>
+        <a class="btn-sair" href="logout.php">Sair</a>
+
     </div>
 
     <?php exibir_mensagem(); ?>
 
-    <nav>
-        <ul>
-            <li><a href="index.php">Dashboard</a></li>
-            <li><a href="categorias_listar.php">Categorias</a></li>
-            <li><a href="transacoes_listar.php">Transações</a></li>
-        </ul>
-    </nav>
 
     <h2>Resumo Financeiro</h2>
 
@@ -86,35 +82,36 @@ $ultimas_transacoes = $stmt_ultimas->fetchAll();
     </div>
 </body>
 <h2>Últimas Transações</h2>
-    
-    <?php if (count($ultimas_transacoes) > 0): ?>
-        <table border="1">
-            <thead>
+
+<?php if (count($ultimas_transacoes) > 0): ?>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($ultimas_transacoes as $transacao): ?>
                 <tr>
-                    <th>Data</th>
-                    <th>Descrição</th>
-                    <th>Categoria</th>
-                    <th>Tipo</th>
-                    <th>Valor</th>
+                    <td><?php echo date('d/m/Y', strtotime($transacao['data_transacao'])); ?></td>
+                    <td><?php echo htmlspecialchars($transacao['descricao']); ?></td>
+                    <td><?php echo htmlspecialchars($transacao['categoria_nome'] ?? 'Sem categoria'); ?></td>
+                    <td><?php echo ucfirst($transacao['tipo']); ?></td>
+                    <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($ultimas_transacoes as $transacao): ?>
-                    <tr>
-                        <td><?php echo date('d/m/Y', strtotime($transacao['data_transacao'])); ?></td>
-                        <td><?php echo htmlspecialchars($transacao['descricao']); ?></td>
-                        <td><?php echo htmlspecialchars($transacao['categoria_nome'] ?? 'Sem categoria'); ?></td>
-                        <td><?php echo ucfirst($transacao['tipo']); ?></td>
-                        <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-        
-        <p><a href="transacoes_listar.php">Ver todas as transações</a></p>
-    <?php else: ?>
-        <p>Nenhuma transação cadastrada ainda.</p>
-        <p><a href="transacoes_formulario.php">Cadastrar primeira transação</a></p>
-    <?php endif; ?>
-    
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <p><a href="transacoes_listar.php">Ver todas as transações</a></p>
+<?php else: ?>
+    <p>Nenhuma transação cadastrada ainda.</p>
+    <p><a href="transacoes_formulario.php">Cadastrar primeira transação</a></p>
+<?php endif; ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 </html>
